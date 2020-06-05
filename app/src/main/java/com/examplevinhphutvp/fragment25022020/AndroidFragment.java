@@ -3,12 +3,14 @@ package com.examplevinhphutvp.fragment25022020;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -50,17 +52,15 @@ public class AndroidFragment extends Fragment {
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
             View view;
             RelativeLayout mRlayout;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Toast.makeText(getContext(), "onCreate", Toast.LENGTH_SHORT).show();
+    }
 
             @Override
             public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,6 +69,7 @@ public class AndroidFragment extends Fragment {
                 view = inflater.inflate(R.layout.fragment_android, container, false);
                 mRlayout = view.findViewById(R.id.relativeBackgroundAndroid);
                 randomColorBackground();
+                Toast.makeText(getContext(), "onCreateView", Toast.LENGTH_SHORT).show();
                 return view;
             }
 

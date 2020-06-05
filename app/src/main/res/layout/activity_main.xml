@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonRemoveios"
         android:layout_toRightOf="@id/buttonPopBackStack"
-        android:onClick="Detach"
+        android:onClick="detach"
         android:text="Detach" />
 
     <Button
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonRemoveios"
         android:layout_toRightOf="@id/buttonDetach"
-        android:onClick="Attach"
+        android:onClick="attach"
         android:text="Attach" />
 
     <LinearLayout
