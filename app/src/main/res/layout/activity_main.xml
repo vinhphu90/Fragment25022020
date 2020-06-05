@@ -1,18 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <Button
+        android:id="@+id/buttonAddAndroid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:onClick="addAndroid"
+        android:text="Hello World!" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/buttonAddios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/buttonAddAndroid"
+        android:onClick="addIos"
+        android:text="Add iOS" />
+
+    <Button
+        android:id="@+id/buttonReplaceAndroid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/buttonAddios"
+        android:onClick="replaceAndroid"
+        android:text="Replace Android" />
+
+    <Button
+        android:id="@+id/buttonReplaceios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAddios"
+        android:onClick="replaceIos"
+        android:text="Replace iOS" />
+
+    <Button
+        android:id="@+id/buttonRemoveAndroid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAddAndroid"
+        android:layout_toRightOf="@id/buttonReplaceios"
+        android:onClick="removeAndroid"
+        android:text="Remove Android" />
+
+    <Button
+        android:id="@+id/buttonRemoveios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAddios"
+        android:layout_toRightOf="@id/buttonRemoveAndroid"
+        android:onClick="removeIos"
+        android:text="Remove iOS" />
+
+    <Button
+        android:id="@+id/buttonPopBackStack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonRemoveios"
+        android:onClick="popbackstack"
+        android:text="Pop back stack" />
+
+    <Button
+        android:id="@+id/buttonDetach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonRemoveios"
+        android:layout_toRightOf="@id/buttonPopBackStack"
+        android:onClick="Detach"
+        android:text="Detach" />
+
+    <Button
+        android:id="@+id/buttonAttach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonRemoveios"
+        android:layout_toRightOf="@id/buttonDetach"
+        android:onClick="Attach"
+        android:text="Attach" />
+
+    <LinearLayout
+        android:id="@+id/liearlayoutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonPopBackStack"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</RelativeLayout>
